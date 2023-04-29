@@ -83,6 +83,7 @@ class UserUpdate(APIView):
 
         try:
             profile_user = User.objects.get(email = request.data.get('email'))
+            # Для редактирования своего профиля возможно использовать User.objects.get(email = request.user)
         except:
             return Response('Укажите email')
 
